@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>扫码认证通道</title>
+    <script src="./js/rem.js"></script>
+    <style>
+        html {
+     height: 100%;
+}
+ body {
+     background: url('./image/bg.png') no-repeat;
+     height: 100%;
+     background-size: cover;
+     padding: 1.0810810810810811rem 0.5405405405405406rem 0;
+     box-sizing: border-box;
+     margin: 0;
+}
+ .login {
+     padding: 1.0810810810810811rem 0.8108108108108109rem;
+     background-color: #fff;
+     opacity: .85;
+     height: 10.81081081081081rem;
+     border-radius: 0.16216216216216217rem;
+}
+ .title {
+     text-align: center;
+     font-weight: normal;
+     margin-bottom: 1.0810810810810811rem;
+     margin-top: 0;
+}
+ .userinfo {
+     margin-bottom: 1.3513513513513513rem;
+}
+ .username {
+     margin-bottom: 0.5405405405405406rem;
+}
+ .username label,.usermobile label {
+     font-size: 0.3783783783783784rem;
+}
+ .username input,.usermobile input {
+     border: none;
+     outline: none;
+     height: 1.2162162162162162rem;
+     line-height: 1.2162162162162162rem;
+     border-bottom: 0.02702702702702703rem solid #eeeeee;
+     width: 100%;
+     padding-left: 0.8108108108108109rem;
+     box-sizing: border-box;
+}
+ input::placeholder {
+     color: #aaaaaa;
+}
+ .username,.usermobile {
+     position: relative;
+}
+ .header {
+     position: absolute;
+     width: 0.43243243243243246rem;
+     height: 0.43243243243243246rem;
+     top: 0.8918918918918919rem;
+     left: 0.13513513513513514rem;
+}
+ .mobile {
+     position: absolute;
+     width: 0.32432432432432434rem;
+     height: 0.5405405405405406rem;
+     top: 0.8918918918918919rem;
+     left: 0.1891891891891892rem;
+}
+ .submit button {
+     width: 100%;
+     height: 1.0810810810810811rem;
+     border: none;
+     border-radius: 0.5405405405405406rem;
+     background: linear-gradient(to right,#00d6e2,#ff00ff);
+     color: #ffffff;
+     line-height: 1.0810810810810811rem;
+     text-align: center;
+}
+ a {
+     color: #fff;
+     text-decoration: none;
+}
+ 
+    </style>
+</head>
+<body>
+    <div class="login">
+        <h2 class="title">扫码认证通道</h2>
+        <div class="userinfo">
+            <div class="username">
+                <label for="">姓名</label>
+                <br>
+                <input type="text" id="username" placeholder="请输入您的姓名">
+                <img class="header" src="./image/user.png" alt="">
+            </div>
+            <div class="usermobile">
+                <label for="">手机号</label>
+                <br>
+                <input type="number" id="usermobile" placeholder="请输入您的手机号码">
+                <img class="mobile" src="./image/mobile1.png" alt="">
+            </div>
+        </div>
+        <div class="submit">
+            <button id="submit">
+                提 交
+            </button>
+        </div>
+    </div>
+</body>
+<script>
+    var btn = document.getElementById('submit');
+    var username = document.getElementById('username');
+    var usermobile = document.getElementById('usermobile');
+    btn.addEventListener('click',function() {
+        if(!username.value) {
+            alert('请输入正确的姓名')
+            return
+        }
+        if(!usermobile.value || (usermobile.value.length!==11)) {
+            alert('请输入正确的手机号')
+            return
+        }
+        location.href = './ercode.html';
+    })
+</script>
+</html>
